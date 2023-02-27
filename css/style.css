@@ -1,0 +1,138 @@
+#logo{
+    width: 25px;
+    opacity: 0;
+    animation: grow-logo 5s forwards;
+  }
+  
+@keyframes grow-logo{
+from{
+    width: 25px;
+    opacity: 0;
+}
+to{
+    width: 475px;
+    opacity: 1;
+}
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links{
+    display:flex;
+    flex-direction: column;
+}
+
+.nav_links a:visited{
+    color:#50C7C7
+}
+
+.card{
+    display:flex;
+    flex-direction: column;
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+.card > header{
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #45ADAD;
+    border-radius: 50px 50px 0px 0px;
+    background: #288088;
+    padding: 20px 0px 20px 0px;
+}
+
+.gallery{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.gallery img{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+}
+
+.pricing{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center; 
+}
+
+@media (min-width: 900px) {
+    header{
+        flex-direction:row;
+        justify-content:space-between;
+    } 
+    .nav_links{
+        flex-direction:row;
+    }
+    .card {
+            flex-basis: 275px;
+        }
+    .pricing{
+        flex-direction:row;
+        align-items:center;
+    }
+    body > header{
+        position:sticky;
+        top: 0;
+        z-index:1
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print{
+    body{
+        font-family: Arial, Helvetica;
+        background-image:none;
+    }
+    nav {
+        width: 100%;
+    }
+    .card{
+        border-radius: 2px;
+        border-style: solid;
+        border-color: #45ADAD;
+        flex-basis: 325px;
+    }
+    .card ul li:nth-child(2)::after{
+        content:"\01F44D";
+    }
+    .nav_links{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:space-evenly;
+    }
+    .pricing{
+        flex-wrap:nowrap;
+        align-items:end;
+    }
+    #gallery{
+        visibility: hidden;
+    }
+    .gallery{
+        display:none; 
+    }
+}
